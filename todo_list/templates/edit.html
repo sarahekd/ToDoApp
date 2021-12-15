@@ -7,9 +7,24 @@
 		
 	<form class="form-inline my-2 my-lg-0" method="POST">
       {% csrf_token %}
-      <input class="form-control mr-sm-2" type="search" placeholder="{{ item.item }}" value="{{ item.item }}" aria-label="Item" name="item">
-      
-      <input class="form-control mr-sm-2" type="search" placeholder="{{ item.time_est }}" value="{{ item.time_est }}" aria-label="Time Estimate" name="time_est"> 
+      <div>
+        <input class="form-control mr-sm-2" type="text" placeholder="{{ item.item }}" value="{{ item.item }}" aria-label="Item" name="item">         
+        </div>
+      <div>
+        <input class="form-control mr-sm-2" type="datetime-local" placeholder="{{ item.due_date }}" value="{{ item.due_date }}" aria-label="Due Date" name="due_date">  Current Due Date is {{ item.due_date }}
+        
+        </div>
+        
+        
+        <div>
+            <input class="form-control mr-sm-2" type="text" placeholder="{{ item.priority }}" value="{{ item.priority }}" aria-label="Priority" name="priority">
+        </div>
+        <div>
+            <input class="form-control mr-sm-2" type="number" placeholder="{{ item.time_est }}" value="{{ item.time_est }}" aria-label="Time Estimate" name="time_est">
+        </div>
+                <div>
+            <input class="form-control mr-sm-2" type="text" placeholder="{{ item.notes }}" value="{{ item.notes }}" aria-label="Notes" name="notes">
+        </div>
 
       <input type="hidden" value="{{ item.completed }}" name="completed">
 
